@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Req page is displayed]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="80610" started-at="2018-10-25T03:29:12Z" finished-at="2018-10-25T03:30:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="80610" started-at="2018-10-25T03:29:12Z" finished-at="2018-10-25T03:30:32Z">
+      <class name="script.GmailTC1">
+        <test-method status="PASS" signature="testGmailTC1()[pri:0, instance:script.GmailTC1@3c756e4d]" name="testGmailTC1" duration-ms="80499" started-at="2018-10-25T08:59:12Z" finished-at="2018-10-25T09:00:32Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Req page is displayed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testGmailTC1 -->
+      </class> <!-- script.GmailTC1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

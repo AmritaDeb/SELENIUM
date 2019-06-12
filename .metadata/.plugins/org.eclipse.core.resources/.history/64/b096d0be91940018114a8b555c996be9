@@ -1,0 +1,25 @@
+package qsp;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoM {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+	WebDriver driver = new ChromeDriver();        //open chrome browser
+	driver.get("file:///C:/Users/Admin/Desktop/qsp.html");
+	
+	//find the element by tag name a and store its address
+	driver.findElement(By.cssSelector("a[id='a1']")).click();
+	driver.navigate().back();
+	
+	
+	}
+}

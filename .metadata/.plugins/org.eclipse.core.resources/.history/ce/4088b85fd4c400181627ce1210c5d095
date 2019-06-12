@@ -1,0 +1,12 @@
+<suite name="Suite">
+  <test name="Test">
+  	<groups>
+  		<run>
+  			<include name="user"/>
+  		</run>
+  	</groups>
+    <classes>
+      <class name="jsp.DemoA"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,32 @@
+package qsp;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoD {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		//open chrome browser
+	WebDriver driver = new ChromeDriver();
+	
+	//Enter naukri.com
+	driver.get("http://www.naukri.com");
+	
+	//maximize the browser
+	driver.manage().window().maximize();
+	
+	driver.quit();        //close all the browser
+	Thread.sleep(2000);
+	
+	driver=new ChromeDriver();
+	
+	driver.get("http://www.naukri.com");
+	
+	driver.close();           //close only the current browser
+	
+	}
+}

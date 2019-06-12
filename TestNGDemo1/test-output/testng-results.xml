@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+    <line>
+      <![CDATA[login]]>
+    </line>
+    <line>
+      <![CDATA[createUser]]>
+    </line>
+    <line>
+      <![CDATA[logout]]>
+    </line>
+    <line>
+      <![CDATA[login]]>
+    </line>
+    <line>
+      <![CDATA[deleteUser]]>
+    </line>
+    <line>
+      <![CDATA[logout]]>
+    </line>
+    <line>
+      <![CDATA[login]]>
+    </line>
+    <line>
+      <![CDATA[createProduct]]>
+    </line>
+    <line>
+      <![CDATA[logout]]>
+    </line>
+    <line>
+      <![CDATA[login]]>
+    </line>
+    <line>
+      <![CDATA[deleteProduct]]>
+    </line>
+    <line>
+      <![CDATA[logout]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="164" started-at="2018-09-19T12:42:02Z" finished-at="2018-09-19T12:42:02Z">
+    <groups>
+      <group name="product">
+        <method signature="DemoD.createProduct()[pri:4, instance:dP.DemoD@4de8b406]" name="createProduct" class="dP.DemoD"/>
+        <method signature="DemoD.deleteProduct()[pri:5, instance:dP.DemoD@4de8b406]" name="deleteProduct" class="dP.DemoD"/>
+      </group> <!-- product -->
+      <group name="smoke">
+        <method signature="DemoD.createProduct()[pri:4, instance:dP.DemoD@4de8b406]" name="createProduct" class="dP.DemoD"/>
+        <method signature="DemoD.createUser()[pri:1, instance:dP.DemoD@4de8b406]" name="createUser" class="dP.DemoD"/>
+      </group> <!-- smoke -->
+      <group name="user">
+        <method signature="DemoD.createUser()[pri:1, instance:dP.DemoD@4de8b406]" name="createUser" class="dP.DemoD"/>
+        <method signature="DemoD.deleteUser()[pri:3, instance:dP.DemoD@4de8b406]" name="deleteUser" class="dP.DemoD"/>
+      </group> <!-- user -->
+    </groups>
+    <test name="Default test" duration-ms="164" started-at="2018-09-19T12:42:02Z" finished-at="2018-09-19T12:42:02Z">
+      <class name="dP.DemoD">
+        <test-method status="PASS" signature="login()[pri:0, instance:dP.DemoD@4de8b406]" name="login" is-config="true" duration-ms="16" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="createUser()[pri:1, instance:dP.DemoD@4de8b406]" name="createUser" duration-ms="19" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[createUser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createUser -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:dP.DemoD@4de8b406]" name="logout" is-config="true" duration-ms="1" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method status="PASS" signature="login()[pri:0, instance:dP.DemoD@4de8b406]" name="login" is-config="true" duration-ms="0" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="deleteUser()[pri:3, instance:dP.DemoD@4de8b406]" name="deleteUser" duration-ms="3" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[deleteUser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- deleteUser -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:dP.DemoD@4de8b406]" name="logout" is-config="true" duration-ms="1" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method status="PASS" signature="login()[pri:0, instance:dP.DemoD@4de8b406]" name="login" is-config="true" duration-ms="1" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="createProduct()[pri:4, instance:dP.DemoD@4de8b406]" name="createProduct" duration-ms="4" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[createProduct]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createProduct -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:dP.DemoD@4de8b406]" name="logout" is-config="true" duration-ms="1" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method status="PASS" signature="deleteProduct()[pri:5, instance:dP.DemoD@4de8b406]" name="deleteProduct" duration-ms="3" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[deleteProduct]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- deleteProduct -->
+        <test-method status="PASS" signature="login()[pri:0, instance:dP.DemoD@4de8b406]" name="login" is-config="true" duration-ms="0" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:dP.DemoD@4de8b406]" name="logout" is-config="true" duration-ms="1" started-at="2018-09-19T18:12:02Z" finished-at="2018-09-19T18:12:02Z">
+          <reporter-output>
+            <line>
+              <![CDATA[logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+      </class> <!-- dP.DemoD -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

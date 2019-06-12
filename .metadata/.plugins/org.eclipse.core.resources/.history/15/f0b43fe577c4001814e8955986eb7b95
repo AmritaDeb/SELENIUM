@@ -1,0 +1,19 @@
+package pom;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class UserListPage {
+
+	//Declaration
+	@FindBy(xpath="//div[text()='Add User']")
+	private WebElement addUserLink;
+	
+	public WebDriver driver;
+	
+	//Initialization
+	public UserListPage(WebDriver driver){
+		
+	}
+}

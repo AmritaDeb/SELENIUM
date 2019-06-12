@@ -1,0 +1,8 @@
+package pom;
+
+public class Test {
+
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+	}
+}

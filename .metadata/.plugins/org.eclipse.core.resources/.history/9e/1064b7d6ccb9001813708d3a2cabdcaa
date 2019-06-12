@@ -1,0 +1,62 @@
+/*
+  	Go to www.vtiger.com ,
+ 	hover on Resourecs,
+	click on contact,
+	scroll till human resources,
+	get the hr ph number by using independent-dependent xpath.
+*/
+
+package automation1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Test29 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//Open chrome browser
+	WebDriver driver = new ChromeDriver();
+		//Enter the URL
+	driver.get("http://www.vtiger.com/");
+	driver.manage().window().maximize();
+	Thread.sleep(2000);
+	String xp = "//a[contains(text(),'Resources')]";
+		//find the element of Resources in menu
+	WebElement menu = driver.findElement(By.xpath(xp));
+		//creating object using parameterized Action constructor
+	Actions actions = new Actions(driver);
+		//hovering the mouse pointer on the menu
+	actions.moveToElement(menu).perform();
+	Thread.sleep(2000);
+		//click on contact option
+	driver.findElement(By.xpath("//a[.='Contact']")).click();
+	
+	Thread.sleep(2000);
+	
+	//(type-casting)
+	JavascriptExecutor j = (JavascriptExecutor) driver;
+		//xpath of Human Resources
+	String hr = "//div[contains(text(),'Human Resources')]";
+		//get y axis location
+	int y = driver.findElement(By.xpath(hr)).getLocation().getY();
+	int x = driver.findElement(By.xpath(hr)).getLocation().getX();
+		//Scroll Down
+	j.executeScript("window.scrollBy(" + x + "," + y + ")");
+		
+	Thread.sleep(2000);
+	
+	String ph = "//div[.='Human Resources	']/../div[2]";
+	String ph_no = driver.findElement(By.xpath(ph)).getText();
+	System.out.println(ph_no);
+	driver.close();
+	}
+}

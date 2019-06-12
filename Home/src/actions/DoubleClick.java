@@ -1,0 +1,46 @@
+package actions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class DoubleClick {
+
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+		//Open chrome browser
+	WebDriver driver = new ChromeDriver();
+		//Enter the URL
+	driver.get("https://drive.google.com/");
+	driver.manage().window().maximize();
+	Thread.sleep(2000);
+	
+	driver.findElement(By.xpath("(//a[.='Go to Google Drive'])[4]")).click();
+	Thread.sleep(2000);
+	
+	WebElement u_n = driver.findElement(By.id("identifierId"));
+	u_n.sendKeys("amritadebbarman@gmail.com");
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//span[.='Next']")).click();
+	Thread.sleep(2000);
+	WebElement pass = driver.findElement(By.name("password"));
+	pass.sendKeys("161amrita2541");
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//span[.='Next']")).click();
+	
+	//driver.findElement(By.xpath("//span[.='My Drive']")).click();
+	
+	Actions actions = new Actions(driver);
+	Thread.sleep(2000);
+	WebElement target = driver.findElement(By.xpath("//span[.='Tutorials']"));
+	actions.doubleClick(target).perform();
+	
+	}
+}

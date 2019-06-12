@@ -1,0 +1,37 @@
+	
+// Q. Get the title of www.google.com.
+
+package qsp;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoA {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");    // set the path of chrome driver executables
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");	// set the path of firefox driver executables
+	}
+	
+	//general method
+	
+	public static void test(WebDriver driver){
+		
+		//Enter the URL in address bar & wait till the page is loaded
+		driver.get("http://www.google.com");
+		
+		//get the title
+		String title = driver.getTitle();
+		System.out.println(title);
+		
+		//close the window
+		driver.close();
+	}
+
+	public static void main(String[] args) {
+		
+	// Open the chrome browser
+	WebDriver driver = new ChromeDriver();   
+	test(driver);
+	
+	}
+}

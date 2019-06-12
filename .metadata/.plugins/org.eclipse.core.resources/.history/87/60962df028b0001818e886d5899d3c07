@@ -1,0 +1,37 @@
+/*
+  	go to cleartrip.com specify bangalore in from field and specify delhi in to field
+ 	select any date from the calender click on search flights
+	print the contains of list box, select the 9th option
+*/
+
+package automation1;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Test82 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.facebook.com/");
+		driver.manage().window().maximize();
+		
+		WebElement day = driver.findElement(By.xpath("//select[@id='day']/option[@value='31']"));
+		System.out.println(day.getText());
+		day.click();
+		Thread.sleep(5000);
+		
+	
+		
+		driver.close();
+	}
+}

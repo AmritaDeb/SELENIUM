@@ -1,0 +1,32 @@
+package qsp;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoJ {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+	WebDriver driver = new ChromeDriver();        //open chrome browser
+	//driver.get("http://localhost/login.do");         //Enter naukri.com
+	driver.get("http://facebook.com"); 
+	
+	//goto element where cursor is blinking (focused)
+	WebElement e = driver.switchTo().activeElement();   // activeElement() => active the cursor
+	Thread.sleep(2000);
+	
+	//type the input
+	e.sendKeys("Amy");     
+	Thread.sleep(2000);
+	
+	//remove the input
+	e.clear();
+	
+	driver.close();           //close only the current browser
+	}
+}

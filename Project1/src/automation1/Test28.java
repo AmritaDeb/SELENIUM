@@ -1,0 +1,51 @@
+/*
+ * 1. click on the actiTIME Inc link
+ * 2. control + click on the actiTIME Inc link
+ * */
+
+package automation1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Test28 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//Open chrome browser
+	WebDriver driver = new ChromeDriver();
+		//Enter the URL
+	driver.get("https://demo.actitime.com/login.do");
+	Thread.sleep(2000);
+		//find the element of actiTIME Inc link
+	WebElement link = driver.findElement(By.linkText("actiTIME Inc."));
+	
+	link.click();
+	Thread.sleep(2000);
+	driver.quit();
+	
+	//Open chrome browser
+	driver = new ChromeDriver();
+		//Enter the URL
+	driver.get("https://demo.actitime.com/login.do");
+	Thread.sleep(2000);
+		//find the element of actiTIME Inc link
+	link = driver.findElement(By.linkText("actiTIME Inc."));
+		//creating object using parameterized Action constructor
+	Actions actions = new Actions(driver);
+		//actions.sendKeys(Keys.CONTROL).click(link).build().perform();
+	actions.sendKeys(Keys.CONTROL).click(link).perform();
+	
+	Thread.sleep(2000);
+	
+	driver.quit();
+	}
+}

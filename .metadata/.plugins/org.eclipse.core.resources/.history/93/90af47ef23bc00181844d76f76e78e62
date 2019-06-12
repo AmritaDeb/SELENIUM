@@ -1,0 +1,24 @@
+package actitime;
+
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
+public class GridDemo {
+
+	static{
+		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+	}
+	@Test
+	public void testDemoA() throws Exception{
+		
+		URL url = new URL("http://192.168.43.133:4444/wd/hub");
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setBrowserName("chrome");
+		WebDriver driver = new RemoteWebDriver(url,dc);
+		driver.get("https//demo.actitime.com");
+	}
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Magestic in BNG]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="308" started-at="2019-06-11T09:52:09Z" finished-at="2019-06-11T09:52:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="308" started-at="2019-06-11T09:52:09Z" finished-at="2019-06-11T09:52:09Z">
+      <class name="sony.DemoA">
+        <test-method status="PASS" signature="TestA(java.lang.String, java.lang.String)[pri:0, instance:sony.DemoA@643b1d11]" name="TestA" duration-ms="54" started-at="2019-06-11T15:22:09Z" finished-at="2019-06-11T15:22:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[BNG]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Magestic]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Magestic in BNG]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- TestA -->
+      </class> <!-- sony.DemoA -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

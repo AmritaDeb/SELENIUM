@@ -1,0 +1,48 @@
+package automation1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test3 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) {
+		
+		//Open chrome browser
+	WebDriver driver = new ChromeDriver();
+		//Enter the URL
+	driver.get("https://www.facebook.com");
+		//Expected Result
+	String expectedTitle = "log in";
+	System.out.println(expectedTitle);
+		//Actual Result
+	String actualTitle = driver.getTitle();
+	System.out.println(actualTitle);
+		//Compare the actual result with expected result
+	if(actualTitle.contains(expectedTitle)){
+		System.out.println("Pass: Facebook login page is displayed");
+	}
+	else{
+		System.out.println("Fail: Facebook login page is not displayed");	
+	}
+	
+	WebElement un = driver.findElement(By.id("email"));
+	WebElement pass = driver.findElement(By.id("pass"));
+	
+	if(un.isDisplayed()){
+		System.out.println("Pass: UserName is displayed");
+	}
+	else{
+		System.out.println("Pass: UserName is not displayed");
+	}
+	}
+		
+		//Close the browser
+	driver.close();
+	}
+}

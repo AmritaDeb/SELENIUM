@@ -1,0 +1,61 @@
+/*
+  	go to hotel.html, check:
+  	1. listbox is multiple or not
+  	2. count the options of listbox
+  	3. count the selected option of listbox
+  	4. deselect the options
+*/
+
+package automation1;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Test84 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("file:///D:/QSpiders/SELENIUM/html/hotel.html");
+		driver.manage().window().maximize();
+		
+//		String xp = "//select[@id='mtr']/option";
+//		List<WebElement> all = driver.findElements(By.xpath(xp));
+		
+		WebElement listBox = driver.findElement(By.id("mtr"));
+		
+		Select select = new Select(listBox);
+		System.out.println(select.isMultiple());
+		
+		select.selectByIndex(0);
+		Thread.sleep(1000);
+		select.selectByValue("v");
+		Thread.sleep(1000);
+		select.selectByVisibleText("Poori");
+		Thread.sleep(1000);
+		
+		System.out.println(select.getOptions().size());
+		System.out.println(select.getAllSelectedOptions().size());
+		System.out.println(select.getFirstSelectedOption().getText());
+		
+		select.deselectByIndex(0);
+		Thread.sleep(1000);
+		
+		select.deselectByValue("v");
+		Thread.sleep(1000);
+		
+		select.deselectByVisibleText("Dosa");
+		
+		driver.close();
+	}
+}

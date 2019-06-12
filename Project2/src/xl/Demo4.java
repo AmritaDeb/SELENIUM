@@ -1,0 +1,32 @@
+
+/*
+ * Write content in xl sheet
+ * */
+
+package xl;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.testng.annotations.Test;
+
+public class Demo4 {
+
+	public static void writeResultToXL(String path, int passCount, int failCount){
+	
+		try{
+			Workbook w = WorkbookFactory.create(new FileInputStream(path));
+			w.getSheet("sheet1").getRow(1).getCell(0).setCellValue(passCount);
+			w.getSheet("sheet1").getRow(1).getCell(1).setCellValue(failCount);
+			w.write(new FileOutputStream(path));
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	@Test
+	public void testA(){
+		Demo4.writeResultToXL("./data/Book4.xlsx",7,3);
+	}
+}

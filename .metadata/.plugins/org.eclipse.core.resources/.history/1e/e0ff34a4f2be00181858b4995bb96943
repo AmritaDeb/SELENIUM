@@ -1,0 +1,94 @@
+/*
+  	go to snapdeal.com
+	search iphone x and select the 1st auto suggestion
+ 	get all the displayed prices by getText()
+ 	print the max price
+*/
+
+package automation1;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Test77 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.snapdeal.com/");
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.id("inputValEnter")).sendKeys("iphone x");
+		
+		Thread.sleep(5000);
+		
+		//String xp = "(//span[.='iphone'])[1]"; 
+			//OR
+		String xp = "(//a[@data-labelname='iphone x'])[1]";
+		driver.findElement(By.xpath(xp)).click();
+		
+		Thread.sleep(9000);
+		
+		//String price_xp = "(//p[contains(text(),'iPhone X')])/following-sibling::div[1]/div/span[2]";
+			//OR
+		String price_xp = "//span[@class='lfloat product-price']";
+		List<WebElement> allPrice = driver.findElements(By.xpath(price_xp));
+		
+		int count = allPrice.size();
+		System.out.println(count);
+		System.out.println("--------------------------");
+		
+		ArrayList<Integer> allPriceNum = new ArrayList<>();
+		
+		for(WebElement price:allPrice)
+		{
+			/*
+			String text = priceallPriceNum.getText();
+			//System.out.println(text);
+			String s1 = text.replaceAll("Rs. ", "");
+			//System.out.println(s1);
+			String s2 = s1.replaceAll(",", "");
+			//System.out.println(s2);
+			int v = Integer.parseInt(s2);
+			allPriceNum.add(v);
+			*/
+				//code optimization
+			String text = price.getText().replaceAll("Rs. ", "").replaceAll(",", "");
+			allPriceNum.add(Integer.parseInt(text));
+			
+			
+		}
+		
+		System.out.println("---------------------------");
+		Collections.sort(allPriceNum);
+		for(Integer num:allPriceNum)
+		{
+			System.out.println(num);
+		}
+		System.out.println("---------------------------");
+		System.out.println("The min price is: " + allPriceNum.get(0));
+		String min_xp = "(//span[@class='lfloat product-price'])[1]/../../../p";
+		String min_name = driver.findElement(By.xpath(min_xp)).getText();
+		System.out.println(min_name);
+		
+		System.out.println("---------------------------");
+		Collections.sort(allPriceNum, Collections.reverseOrder());
+		System.out.println("The max price is: " + allPriceNum.get(0));
+		String max_xp = "(//span[@class='lfloat product-price'])[" + count + "]/../../../p";
+		String max_name = driver.findElement(By.xpath(max_xp)).getText();
+		System.out.println(max_name);
+		
+		driver.close();
+	}
+}

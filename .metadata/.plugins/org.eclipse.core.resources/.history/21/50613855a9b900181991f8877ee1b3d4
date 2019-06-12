@@ -1,0 +1,34 @@
+//To clear the value from the textfield without using JavascriptExecutor
+
+package automation1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test26 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//Open chrome browser
+	WebDriver driver = new ChromeDriver();
+	
+	driver.get("file:///D:/QSpiders/SELENIUM/html/JSDemo.html");
+	Thread.sleep(2000);
+	WebElement e = driver.findElement(By.id("t2"));
+	e.sendKeys(Keys.CONTROL+"a");
+	Thread.sleep(2000);
+	e.sendKeys(Keys.DELETE);     //working
+	//e.sendKeys(Keys.BACK_SPACE);   //working
+	//e.sendKeys(Keys.CLEAR);   //not working
+
+	Thread.sleep(2000);
+	driver.close();
+	}
+}

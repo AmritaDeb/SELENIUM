@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Create User:UserA Pwd:123]]>
+    </line>
+    <line>
+      <![CDATA[Create User:UserB Pwd:456]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="93" started-at="2018-09-30T18:00:49Z" finished-at="2018-09-30T18:00:49Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="93" started-at="2018-09-30T18:00:49Z" finished-at="2018-09-30T18:00:49Z">
+      <class name="jsp.DPDemo1">
+        <test-method status="PASS" signature="cUser(java.lang.String, int)[pri:0, instance:jsp.DPDemo1@1efbd816]" name="cUser" duration-ms="16" started-at="2018-09-30T23:30:49Z" data-provider="getData" finished-at="2018-09-30T23:30:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Create User:UserA Pwd:123]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- cUser -->
+        <test-method status="PASS" signature="cUser(java.lang.String, int)[pri:0, instance:jsp.DPDemo1@1efbd816]" name="cUser" duration-ms="15" started-at="2018-09-30T23:30:49Z" data-provider="getData" finished-at="2018-09-30T23:30:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[UserB]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Create User:UserB Pwd:456]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- cUser -->
+      </class> <!-- jsp.DPDemo1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

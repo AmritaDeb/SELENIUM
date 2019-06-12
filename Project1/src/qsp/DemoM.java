@@ -1,0 +1,42 @@
+
+/*
+ * Qs. Find the WebElement by cssSelector locator and click on it 
+*/
+
+package qsp;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemoM {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+	WebDriver driver = new ChromeDriver();        //open chrome browser
+	driver.get("file:///D:/QSpiders/SELENIUM/html/qsp.html");
+	
+	//find the element by tag name a and store its address
+	driver.findElement(By.cssSelector("a[id='a1']")).click();
+	Thread.sleep(2000);
+	driver.navigate().back();
+	
+	driver.findElement(By.cssSelector("a[name='n1']")).click();
+	Thread.sleep(2000);
+	driver.navigate().back();
+	
+	driver.findElement(By.cssSelector("a[class='c1']")).click();
+	Thread.sleep(2000);
+	driver.navigate().back();
+	
+	driver.findElement(By.cssSelector("a[href=\"http://www.google.com\"]")).click();
+	Thread.sleep(2000);
+	driver.navigate().back();
+	
+	}
+}

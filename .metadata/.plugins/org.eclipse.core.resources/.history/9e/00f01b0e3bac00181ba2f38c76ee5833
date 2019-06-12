@@ -1,0 +1,21 @@
+/*
+ 	Download the java language in mozilla
+*/
+
+package automation1;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Test68 {
+	static{
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./driver/geckodriver.exe");
+	}
+
+	public static void main(String[] args) throws Exception {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.close();
+	}
+}
